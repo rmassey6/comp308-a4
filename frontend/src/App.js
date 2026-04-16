@@ -7,6 +7,7 @@ function App() {
   const [servings, setServings] = useState(1);
   const [notes, setNotes] = useState("");
   const [loading, setLoading] = useState(false);  // Track loading state
+  const [response, setResponse] = useState("");  // To store the API response
 
   const url = process.env.REACT_APP_BACKEND_URL;
 
@@ -32,7 +33,7 @@ function App() {
       }
 
       const data = await res.json();
-      console.log(data.result);
+      setResponse(data.result); // Update the response state
     } catch (error) {
       console.error("Error submitting recipe:", error);
     } finally {
@@ -84,6 +85,13 @@ function App() {
             <span className="visually-hidden">Loading...</span>
           </div>
           <div className='mt-2'>Generating recipe...</div>
+        </div>
+      </div>}
+      {response && <div className='bg-opacity-50 fixed-top vh-100 w-100 bg-dark text-white d-flex align-items-center justify-content-center'>
+        <div className='w-50 bg-white text-dark p-5 rounded d-flex flex-column align-items-center justify-content-center gap-2'>
+          <h2>Generated Recipe</h2>
+          <div className='mt-2'>{response}</div>
+          <button className='btn btn-secondary' onClick={() => setResponse("")}>Close</button>
         </div>
       </div>}
     </div>
