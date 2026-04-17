@@ -1,5 +1,7 @@
 # COMP 308 - Group 7 - Assignment #4
 
+Ryan Massey 301107847
+
 ## Purpose of the App
 
 The purpose of this app is to work with a react frontend and express backend that will take a ingredients, 
