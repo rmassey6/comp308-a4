@@ -1,6 +1,6 @@
 # COMP 308 - Group 7 - Assignment #4
 
-Ryan Massey 301107847
+Ryan Massey - 301107847
 
 ## Purpose of the App
 
